@@ -1,7 +1,7 @@
 GXDatabaseUtils
 ===============
 
-simplify sqlite database CRUD operation
+simplify sqlite database CRUD operation.
 
 ## How To Get Started
  - Copy file under src and catagory directory to your project
@@ -20,10 +20,36 @@ simplify sqlite database CRUD operation
  - Enum for ios8
  
 ## Support iOS version
- ios5 later
+ iOS5 later
 
-## Dependency
-  [fmdb](https://github.com/ccgus/fmdb)
+## Relationship class Member and column name
+`RULE:` column name is member name of class.
+
+For example:
+```objective-c
+// class
+@interface GXBaseMessage : NSObject {
+    
+    NSString *address;
+}
+
+@property (nonatomic, assign) NSInteger count;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSMutableArray *datas;
+@end
+```
+
+| member name  | column name |
+|:-------------:|:-----------:|
+| address | address |
+| count | _count|
+| name | _name|
+| datas | - |
+
+
+## Dependencies
+  - [fmdb](https://github.com/ccgus/fmdb) needed
+  - NSObject subclass
   
 ## Architecture
 * `<catagory>`
