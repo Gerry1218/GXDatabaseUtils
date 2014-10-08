@@ -2,3 +2,112 @@ GXDatabaseUtils
 ===============
 
 simplify sqlite database CRUD operation
+
+## How To Get Started
+ - Copy file under src and catagory directory to your project
+ - [Download fmdb](https://github.com/ccgus/fmdb) relevant file
+ - Add libsqlite3.dylib to project
+ 
+## Support data types
+ - BOOL
+ - unsigned int
+ - NSInteger
+ - long long
+ - CGFloat
+ - double
+ - NSString
+ - BOOL for ios8
+ - Enum for ios8
+ 
+## Support iOS version
+ ios5 later
+
+## Dependency
+  [fmdb](https://github.com/ccgus/fmdb)
+  
+## Architecture
+ -`/catagroy`
+ -`/src`
+ 
+* `<catagory>`
+ -`NSObject+serializable` 
+
+* `<src>`
+ -`GXDatabaseManager`
+ -`GXSQLStatementManager`
+ -`GXCache`
+
+## Usage
+
+### CRUD operation
+C-Create  R-Retrieve U-Update D-Delete
+
+#### `C` 
+```objective-c
+NSString *dbPath = [NSHomeDirectory() stringByAppendingPathComponent:@"testDB.sqlite"];
+BOOL res = [GXDatabaseManager databaseWithPath:dbPath];
+res = [GXDatabaseManager createTable:@"t_message" withClass:[GXMessage class] withPrimaryKey:@"_msgId"];
+```
+
+#### `R`
+```objective-c
+NSString *dbPath = [[NSBundle mainBundle] pathForResource:@"db" ofType:@"sqlite"];
+BOOL res = [GXDatabaseManager databaseWithPath:dbPath];
+if (!res) {
+    NSLog(@"ERROR...");
+}
+    
+NSString *w1 = kWhereString(@"_sessionUserid", @"=");
+NSString *w2 = kWhereString(@"_msgId", @"=");
+NSString *w = kWhereCombination(w1, @"AND", w2);
+    
+[GXDatabaseManager selectObjects:[GXMessageDBEntity class]
+                       fromTable:@"t_message_chat"
+                           where:w
+                      withParams:@[@"1525851662", @"615734ef-2db1-427a-9505-b49ec6a8628c"]
+                         orderBy:@"_msgTime"
+                    withSortType:@"DESC"
+                       withRange:NSMakeRange(0, 5)];
+```
+
+#### `U`
+```objective-c
+// replace into
+NSString *dbPath = [NSHomeDirectory() stringByAppendingPathComponent:@"testDB.sqlite"];
+BOOL res = [GXDatabaseManager databaseWithPath:dbPath];
+
+// create table
+res = [GXDatabaseManager createTable:@"t_message" withClass:[GXMessage class] withPrimaryKey:@"_msgId"];
+    
+[GXDatabaseManager replaceInto:@"t_message" withObject:msg];
+```
+```
+// update
+NSString *dbPath = [NSHomeDirectory() stringByAppendingPathComponent:@"testDB.sqlite"];
+BOOL res = [GXDatabaseManager databaseWithPath:dbPath];
+    
+if (!res) NSLog(@"ERROR");
+    
+    
+NSString *w = kWhereString(@"_msgId", @"=");
+[GXDatabaseManager updateTable:@"t_message"
+                           set:@[@"_fontName"]
+                         where:w
+                    withParams:@[@"黑体", @"1ccaf308-8bb0-1e44-2f0b-98f308d03d57"]];
+```
+
+#### `D`
+```objective-c
+NSString *dbPath = [[NSBundle mainBundle] pathForResource:@"db" ofType:@"sqlite"];
+BOOL res = [GXDatabaseManager databaseWithPath:dbPath];
+if (!res) NSLog(@"ERROR...");
+    
+[GXDatabaseManager deleteTable:@"t_message_chat" where:@"_msgId=?" withParams:@[@"1ccaf308-8bb0-1e44-2f0b-98f308d03d57"]];
+```
+
+---
+
+## License
+
+AFNetworking is available under the MIT license. See the LICENSE file for more info.
+
