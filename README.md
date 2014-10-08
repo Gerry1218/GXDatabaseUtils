@@ -26,30 +26,30 @@ simplify sqlite database CRUD operation
   [fmdb](https://github.com/ccgus/fmdb)
   
 ## Architecture
- -`/catagroy`
- -`/src`
- 
 * `<catagory>`
- -`NSObject+serializable` 
+ - `NSObject+serializable` 
 
 * `<src>`
- -`GXDatabaseManager`
- -`GXSQLStatementManager`
- -`GXCache`
+ - `GXDatabaseManager`
+ - `GXSQLStatementManager`
+ - `GXCache`
 
 ## Usage
 
 ### CRUD operation
-C-Create  R-Retrieve U-Update D-Delete
+ - `C-Create`  
+ - `R-Retrieve` 
+ - `U-Update` 
+ - `D-Delete`
 
-#### `C` 
+#### Create
 ```objective-c
 NSString *dbPath = [NSHomeDirectory() stringByAppendingPathComponent:@"testDB.sqlite"];
 BOOL res = [GXDatabaseManager databaseWithPath:dbPath];
 res = [GXDatabaseManager createTable:@"t_message" withClass:[GXMessage class] withPrimaryKey:@"_msgId"];
 ```
 
-#### `R`
+#### Retrieve
 ```objective-c
 NSString *dbPath = [[NSBundle mainBundle] pathForResource:@"db" ofType:@"sqlite"];
 BOOL res = [GXDatabaseManager databaseWithPath:dbPath];
@@ -70,7 +70,7 @@ NSString *w = kWhereCombination(w1, @"AND", w2);
                        withRange:NSMakeRange(0, 5)];
 ```
 
-#### `U`
+#### Update
 ```objective-c
 // replace into
 NSString *dbPath = [NSHomeDirectory() stringByAppendingPathComponent:@"testDB.sqlite"];
@@ -96,7 +96,7 @@ NSString *w = kWhereString(@"_msgId", @"=");
                     withParams:@[@"黑体", @"1ccaf308-8bb0-1e44-2f0b-98f308d03d57"]];
 ```
 
-#### `D`
+#### Delete
 ```objective-c
 NSString *dbPath = [[NSBundle mainBundle] pathForResource:@"db" ofType:@"sqlite"];
 BOOL res = [GXDatabaseManager databaseWithPath:dbPath];
