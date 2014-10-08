@@ -81,7 +81,7 @@ res = [GXDatabaseManager createTable:@"t_message" withClass:[GXMessage class] wi
     
 [GXDatabaseManager replaceInto:@"t_message" withObject:msg];
 ```
-```
+```objective-c
 // update
 NSString *dbPath = [NSHomeDirectory() stringByAppendingPathComponent:@"testDB.sqlite"];
 BOOL res = [GXDatabaseManager databaseWithPath:dbPath];
