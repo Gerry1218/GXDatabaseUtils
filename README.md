@@ -1,7 +1,8 @@
 GXDatabaseUtils
 ===============
 
-simplify sqlite database CRUD operation.
+- simplify sqlite database CRUD operation. 
+- Support ARC.
 
 ## How To Get Started
  - Copy file under src and catagory directory to your project
