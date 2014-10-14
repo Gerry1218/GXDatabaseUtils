@@ -108,12 +108,16 @@
     [self testReplaceIntoSQL:msg];
 }
 
+#pragma mark - Use GXDatabaseUtils
 - (void)testReplaceIntoSQL:(GXMessage *)msg {
     
     NSString *dbPath = [NSHomeDirectory() stringByAppendingPathComponent:@"testDB.sqlite"];
     BOOL res = [GXDatabaseManager databaseWithPath:dbPath];
+    
+    // create table
     res = [GXDatabaseManager createTable:@"t_message" withClass:[GXMessage class] withPrimaryKey:@"_msgId"];
     
+    // replace into
     [GXDatabaseManager replaceInto:@"t_message" withObject:msg];
 }
 
@@ -129,6 +133,7 @@
     NSString *w2 = kWhereString(@"_msgId", @"=");
     NSString *w = kWhereCombination(w1, @"AND", w2);
     
+    // select * from table
     [GXDatabaseManager selectObjects:[GXMessageDBEntity class]
                            fromTable:@"t_message_chat"
                                where:w
@@ -147,12 +152,12 @@
     
     if (!res) NSLog(@"ERROR");
     
-    
+    // update table
     NSString *w = kWhereString(@"_msgId", @"=");
     [GXDatabaseManager updateTable:@"t_message"
                                set:@[@"_fontName"]
                              where:w
-                        withParams:@[@"黑体", @"1ccaf308-8bb0-1e44-2f0b-98f308d03d57"]];
+                        withParams:@[@"Arial", @"1ccaf308-8bb0-1e44-2f0b-98f308d03d57"]];
     
 }
 
@@ -162,9 +167,10 @@
     BOOL res = [GXDatabaseManager databaseWithPath:dbPath];
     if (!res) NSLog(@"ERROR...");
     
-
+    // delete talbe
     [GXDatabaseManager deleteTable:@"t_message_chat" where:@"_msgId=?" withParams:@[@"1ccaf308-8bb0-1e44-2f0b-98f308d03d57"]];
     
+    // select count
 //    [GXDatabaseManager selectCount:@"t_message_chat" where:@"_sessionUserid=?" withParams:@[@"1472516850"]];
 }
 

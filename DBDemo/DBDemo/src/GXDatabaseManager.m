@@ -11,7 +11,7 @@
 #import "GXSQLStatementManager.h"
 #import "NSObject+serializable.h"
 #import "GXCache.h"
-//#import "GChatMessage.h"
+
 
 static FMDatabase *database = nil;
 
