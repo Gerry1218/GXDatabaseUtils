@@ -5,6 +5,9 @@ GXDatabaseUtils
 - Support ARC.
 - Support ios8 and before.
 
+![Screen shot](docs/screen_shot.png)
+
+
 ## How To Get Started
  - Copy file under src and catagory directory to your project
  - [Download fmdb](https://github.com/ccgus/fmdb) relevant file
