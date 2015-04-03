@@ -5,7 +5,8 @@ GXDatabaseUtils
 - Support ARC.
 - Support ios8 and before.
 
-![](http://e.picphotos.baidu.com/album/s%3D680%3Bq%3D90/sign=16e1de60532c11dfdad1bc2b531c13ed/0823dd54564e9258a5319f6d9882d158ccbf4e2f.jpg)
+![Screen shot](docs/screen_shot.png)
+
 
 ## How To Get Started
  - Copy file under src and catagory directory to your project
