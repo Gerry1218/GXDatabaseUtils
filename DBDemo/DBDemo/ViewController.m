@@ -108,6 +108,20 @@
     [self testReplaceIntoSQL:msg];
 }
 
+#pragma mark - db
+- (FMDatabase *)database {
+    if (!_database) {
+        NSString *databasePath = [[NSBundle mainBundle] pathForResource:@"db" ofType:@"sqlite"];
+        _database = [FMDatabase databaseWithPath:databasePath];
+    }
+    
+    if (![_database open]) {
+        NSLog(@"open database failure.");
+        return nil;
+    }
+    return _database;
+}
+
 #pragma mark - Use GXDatabaseUtils
 - (void)testReplaceIntoSQL:(GXMessage *)msg {
     
