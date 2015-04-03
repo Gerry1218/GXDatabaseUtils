@@ -3,6 +3,7 @@ GXDatabaseUtils
 
 - simplify sqlite database CRUD operation. 
 - Support ARC.
+- Support ios8 and before.
 
 ## How To Get Started
  - Copy file under src and catagory directory to your project
