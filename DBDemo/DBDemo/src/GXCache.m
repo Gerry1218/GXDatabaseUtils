@@ -95,7 +95,7 @@
             [members addObject:dictionary];
             
         }
-        
+        free(vars);
         NSLog(@"------------------Class %@ end-----------------------", clsName);
         
         cls = [cls superclass];
