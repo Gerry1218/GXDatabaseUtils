@@ -107,7 +107,7 @@ static ObjCSqliteTypeMap ObjCSqliteTypeMapTable[] = {
     }
     
     if (range.length > 0) {
-        [selectSQL appendString:[NSString stringWithFormat:@" LIMIT %lu", range.length]];
+        [selectSQL appendString:[NSString stringWithFormat:@" LIMIT %lu", (unsigned long)range.length]];
     }
     
 #if ENABLED_SQL_STATEMENT

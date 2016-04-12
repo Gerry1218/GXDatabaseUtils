@@ -18,7 +18,7 @@ static FMDatabase *database = nil;
 @implementation GXDatabaseManager
 
 + (BOOL) databaseWithPath:(NSString *)path {
-#warning 每次都重新初始化数据库，根据情况修改
+// TODO: 每次都重新初始化数据库，根据情况修改
 //    if (!database) {
         database = [FMDatabase databaseWithPath:path];
 //    }

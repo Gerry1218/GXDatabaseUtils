@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "GXDatabaseUtils"
-  s.version      = "0.1"
+  s.version      = "1.0"
   s.summary      = "simplify sqlite database CRUD operation."
 
   # This description is used to generate tags and improve search results.
