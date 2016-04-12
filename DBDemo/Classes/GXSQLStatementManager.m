@@ -10,8 +10,7 @@
 #import <objc/runtime.h>
 #import "NSObject+serializable.h"
 #import "GXCache.h"
-#import "GXMember.h"
-#import "GXWhere.h"
+
 
 /*
  * 支持的数据类型
