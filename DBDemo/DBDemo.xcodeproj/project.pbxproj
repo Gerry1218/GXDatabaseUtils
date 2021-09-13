@@ -10,9 +10,7 @@
 		CB1D863A19CEAB820025052A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CB1D863919CEAB820025052A /* main.m */; };
 		CB1D863D19CEAB820025052A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB1D863C19CEAB820025052A /* AppDelegate.m */; };
 		CB1D864019CEAB820025052A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB1D863F19CEAB820025052A /* ViewController.m */; };
-		CB1D864319CEAB820025052A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB1D864119CEAB820025052A /* Main.storyboard */; };
 		CB1D864519CEAB820025052A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB1D864419CEAB820025052A /* Images.xcassets */; };
-		CB1D864819CEAB820025052A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB1D864619CEAB820025052A /* LaunchScreen.xib */; };
 		CB1D865419CEAB820025052A /* DBDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CB1D865319CEAB820025052A /* DBDemoTests.m */; };
 		CB1D867519CEABD80025052A /* GXMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = CB1D865F19CEABD80025052A /* GXMessage.m */; };
 		CB1D867619CEABD80025052A /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = CB1D866219CEABD80025052A /* FMDatabase.m */; };
@@ -50,9 +48,7 @@
 		CB1D863C19CEAB820025052A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CB1D863E19CEAB820025052A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		CB1D863F19CEAB820025052A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		CB1D864219CEAB820025052A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CB1D864419CEAB820025052A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		CB1D864719CEAB820025052A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		CB1D864D19CEAB820025052A /* DBDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DBDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB1D865219CEAB820025052A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB1D865319CEAB820025052A /* DBDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBDemoTests.m; sourceTree = "<group>"; };
@@ -137,9 +133,7 @@
 				CB1D863C19CEAB820025052A /* AppDelegate.m */,
 				CB1D863E19CEAB820025052A /* ViewController.h */,
 				CB1D863F19CEAB820025052A /* ViewController.m */,
-				CB1D864119CEAB820025052A /* Main.storyboard */,
 				CB1D864419CEAB820025052A /* Images.xcassets */,
-				CB1D864619CEAB820025052A /* LaunchScreen.xib */,
 				CB1D863719CEAB820025052A /* Supporting Files */,
 				CBD5E26719CFFEA400097CD3 /* play.playground */,
 			);
@@ -289,6 +283,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -308,8 +303,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB1D864319CEAB820025052A /* Main.storyboard in Resources */,
-				CB1D864819CEAB820025052A /* LaunchScreen.xib in Resources */,
 				CB8560FE19D114FD00B67244 /* iphone-512.png in Resources */,
 				CB1D864519CEAB820025052A /* Images.xcassets in Resources */,
 				CB85610419D1183200B67244 /* iphone-25@2x.png in Resources */,
@@ -366,25 +359,6 @@
 			targetProxy = CB1D864E19CEAB820025052A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		CB1D864119CEAB820025052A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CB1D864219CEAB820025052A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		CB1D864619CEAB820025052A /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CB1D864719CEAB820025052A /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CB1D865519CEAB820025052A /* Debug */ = {
@@ -467,6 +441,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = DBDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -478,6 +453,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = DBDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
